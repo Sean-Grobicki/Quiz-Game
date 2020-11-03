@@ -13,7 +13,7 @@ public:
 
 	bool checkAnswer(int theirAnswer);
 
-	std::string getQuestion();
+	std::string* getQuestion();
 
 	std::string* getAnswers();
 };

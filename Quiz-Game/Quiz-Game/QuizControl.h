@@ -5,10 +5,12 @@
 class QuizControl
 {
 private:
-	Question questions[15];
-	UI ui;
-
+	Question* questions[15];
+	UI* ui;
+	int questionCount;
 public:
+	QuizControl();
+
 	void runQuiz();
 
 	void selectQuestions();

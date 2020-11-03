@@ -14,9 +14,9 @@ bool Question::checkAnswer(int theirAnswer)
 	return theirAnswer == correctAnswerIndex;
 };
 
-std::string Question::getQuestion()
+std::string* Question::getQuestion()
 {
-	return question;
+	return &question;
 };
 
 std::string* Question::getAnswers()
