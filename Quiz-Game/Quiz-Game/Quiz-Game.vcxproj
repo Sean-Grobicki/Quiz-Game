@@ -155,12 +155,14 @@
     <ClCompile Include="Quiz-Game.cpp" />
     <ClCompile Include="QuizControl.cpp" />
     <ClCompile Include="UI.cpp" />
+    <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Question.h" />
     <ClInclude Include="QuizControl.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="UI.h" />
+    <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Quiz-Game.rc" />

@@ -6,9 +6,28 @@ UI::UI()
 
 }
 
-void UI::updateAnswer()
+void UI::updateAnswer(User* user,bool correct)
 {
+	if (correct)
+	{
+		std::cout << "That was the correct answer! You have earned "<<(char) 156 << user->getMoney() << std::endl;
+	}
+	else
+	{
+		std::cout << "That answer was incorrect!" << std::endl;
+	}
+	if (user->reachedCheckpoint())
+	{
+		std::cout << "You have reached a checkpoint and are now guaranteed " << (char) 156 << user->getMoney() << std::endl;
+	}
+}
 
+std::string UI::nameInput()
+{
+	std::string name;
+	std::cout << "Enter your name: " << std::endl;
+	std::cin >> name;
+	return name;
 }
 
 void UI::displayQuestion(Question* question)
@@ -47,9 +66,9 @@ int UI::getAnswer()
 	}
 }
 
-void UI::endGame()
+void UI::endGame(User* user)
 {
-
+	std::cout << "Game over " << user ->getName() <<" you earned "<< (char) 156 << user->getLossMoney() << std::endl;
 }
 
 

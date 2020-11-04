@@ -1,17 +1,21 @@
 #pragma once
 #include "Question.h"
+#include "User.h";
+
 class UI
 {
 public:
 	UI();
 
-	void updateAnswer();
+	std::string nameInput();
+
+	void updateAnswer(User* user,bool correct);
 
 	int getAnswer();
 
 	void displayQuestion(Question* question);
 
-	void endGame();
+	void endGame(User* user);
 
 
 };

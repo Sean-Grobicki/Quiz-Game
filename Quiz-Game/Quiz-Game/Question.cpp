@@ -17,7 +17,7 @@ bool Question::checkAnswer(int theirAnswer)
 std::string* Question::getQuestion()
 {
 	return &question;
-};
+}; 
 
 std::string* Question::getAnswers()
 {
