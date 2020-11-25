@@ -1,4 +1,6 @@
+#define CURL_STATICLIB
 #include "QuizControl.h"
+#include "curl/curl.h"
 
 QuizControl::QuizControl()
 {
@@ -23,12 +25,30 @@ void QuizControl::runQuiz()
 
 void QuizControl::selectQuestions()
 {
-	for (int i = 0; i < 15; i++)
+	CURL* curl;
+	CURLcode res;
+
+	curl = curl_easy_init();
+	if (curl)
 	{
-		std::string* answers = new std::string[4]{"Europe","Asia","Africa","South America"};
-		questions[i] = new Question("What is the largest continent in the world?", answers, 1);
+		curl_easy_setopt(curl,CURLOPT_URL, "https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple");
 	}
+	res = curl_easy_perform(curl);
+	if (res != CURLE_OK)
+	{
+		fprintf(stderr, "curl_easy_perform() failed: %s\n",
+			curl_easy_strerror(res));
+	}
+	curl_easy_cleanup(curl);
 }
+
+
+	//First 5 questions easy url
+//https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple
+	//Second 5 questions medium url
+//https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple
+	//Last 5 questions hard url
+//https://opentdb.com/api.php?amount=5&difficulty=hard&type=multiple
 
 bool QuizControl::answerQuestion(int answer)
 {

@@ -1,6 +1,6 @@
 #pragma once
 #include "Question.h"
-#include "User.h";
+#include "User.h"
 
 class UI
 {
