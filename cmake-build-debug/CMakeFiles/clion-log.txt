@@ -1,0 +1,6 @@
+/snap/clion/137/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/sean/CLionProjects/Quiz-Game
+CMake Error at CMakeLists.txt:5:
+  Parse error.  Expected "(", got unquoted argument with text ":=".
+
+
+-- Configuring incomplete, errors occurred!
